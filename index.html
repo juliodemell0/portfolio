@@ -164,7 +164,7 @@
     </div>
     <p class="hero-sub">Senior Product Designer com background em Direção de Arte e atuação em produtos digitais desde 2018. Especialista em Design Systems multibrand e experiências de média e alta complexidade.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:julio.mello@gmail.com">Entrar em contato</a>
+      <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#4c26392025236221292020230c2b212d2520622f2321">Entrar em contato</a>
       <a class="btn btn-ghost" href="#sobre">Sobre mim</a>
     </div>
   </section>
@@ -193,12 +193,12 @@
       <h2 class="contact-title">Vamos<br><span style="color: var(--accent);">conversar?</span></h2>
     </div>
     <div class="contact-links">
-      <a class="contact-btn" href="mailto:julio.mello@gmail.com">
+      <a class="contact-btn" href="/cdn-cgi/l/email-protection#0a607f66636524676f6666654a6d676b636624696567">
         <div class="contact-btn-label">
           <div class="contact-btn-icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
-          <strong>julio.mello@gmail.com</strong>
+          <strong><span class="__cf_email__" data-cfemail="1f756a73767031727a7373705f78727e7673317c7072">[email&#160;protected]</span></strong>
         </div>
         <span class="contact-btn-arrow">→</span>
       </a>
@@ -230,4 +230,16 @@
 
     toggle.addEventListener('click', () => {
       const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateLogo(next);
+    });
+
+    function updateLogo(theme) {
+      logo.src = theme === 'light' ? 'ddc-horizontal-black.svg' : 'ddc-horizontal-white.svg';
+    }
+  </script>
+
+</body>
+</html>
