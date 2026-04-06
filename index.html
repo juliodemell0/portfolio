@@ -123,7 +123,7 @@
 
   <nav>
     <div class="nav-left">
-      <a class="nav-logo" href="#">
+      <a class="nav-logo" href="/">
         <img id="nav-logo-img" src="ddc-horizontal-white.svg" alt="DeMello Design Co.">
       </a>
     </div>
@@ -163,7 +163,7 @@
     <p class="hero-sub lang-pt">Senior Product Designer com background em Direção de Arte e atuação em produtos digitais desde 2018. Especialista em Design Systems multibrand e experiências de média e alta complexidade.</p>
     <p class="hero-sub lang-en">Senior Product Designer with an Art Direction background and experience in digital products since 2018. Specialist in multibrand Design Systems and medium-to-high complexity experiences.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:julio.mello@gmail.com">
+      <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#5c36293035337231393030331c3b313d3530723f3331">
         <span class="lang-pt">Entrar em contato</span>
         <span class="lang-en">Get in touch</span>
       </a>
@@ -220,12 +220,12 @@
       </h2>
     </div>
     <div class="contact-links">
-      <a class="contact-btn" href="mailto:julio.mello@gmail.com">
+      <a class="contact-btn" href="/cdn-cgi/l/email-protection#f298879e9b9ddc9f979e9e9db2959f939b9edc919d9f">
         <div class="contact-btn-label">
           <div class="contact-btn-icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
-          <strong>julio.mello@gmail.com</strong>
+          <strong><span class="__cf_email__" data-cfemail="39534c55505617545c555556795e54585055175a5654">[email&#160;protected]</span></strong>
         </div>
         <span class="contact-btn-arrow">→</span>
       </a>
@@ -246,7 +246,7 @@
     <p>São Paulo, BR</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const html = document.documentElement;
     const logo = document.getElementById('nav-logo-img');
 
@@ -270,14 +270,3 @@
     // Language
     const langBtn = document.getElementById('langToggle');
     const savedLang = localStorage.getItem('lang') || 'pt';
-    html.setAttribute('data-lang', savedLang);
-
-    langBtn.addEventListener('click', () => {
-      const next = html.getAttribute('data-lang') === 'pt' ? 'en' : 'pt';
-      html.setAttribute('data-lang', next);
-      localStorage.setItem('lang', next);
-    });
-  </script>
-
-</body>
-</html>
