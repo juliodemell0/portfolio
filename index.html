@@ -19,7 +19,6 @@
       --contact-hover: rgba(255,255,255,0.05); --contact-hover-border: rgba(255,255,255,0.3);
       --about-body-color: #999;
     }
-
     [data-theme="light"] {
       --bg: #F5F3EE; --bg2: #EDEAE3; --bg3: #E4E1DA;
       --border: rgba(0,0,0,0.08); --border2: rgba(0,0,0,0.14);
@@ -33,7 +32,6 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.6; min-height: 100vh; transition: background 0.3s, color 0.3s; }
 
-    /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem, 5vw, 4rem); height: 64px; background: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: background 0.3s, border-color 0.3s; }
     .nav-left { display: flex; align-items: center; gap: 1.5rem; }
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
@@ -43,22 +41,16 @@
     .nav-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2.5s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-    /* TOGGLE BUTTONS (shared style) */
     .nav-toggle { display: flex; align-items: center; justify-content: center; height: 36px; border-radius: 100px; border: 1px solid var(--border2); background: transparent; cursor: pointer; color: var(--muted); transition: all 0.2s; flex-shrink: 0; }
     .nav-toggle:hover { border-color: var(--text); color: var(--text); background: var(--bg2); }
-
-    /* THEME TOGGLE */
     .theme-toggle { width: 36px; }
     .theme-toggle svg { width: 16px; height: 16px; fill: currentColor; }
     .icon-sun { display: none; }
     .icon-moon { display: block; }
     [data-theme="light"] .icon-sun { display: block; }
     [data-theme="light"] .icon-moon { display: none; }
-
-    /* LANG TOGGLE */
     .lang-toggle { padding: 0 12px; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; }
 
-    /* HERO */
     .hero { display: flex; flex-direction: column; justify-content: flex-start; padding: calc(64px + 64px) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 4rem); }
     .hero-inner { display: flex; align-items: center; gap: clamp(2rem, 4vw, 4rem); margin-bottom: 1.5rem; }
     .hero-avatar { flex-shrink: 0; width: clamp(100px, 14vw, 180px); height: clamp(100px, 14vw, 180px); border-radius: 50%; overflow: hidden; border: 2px solid var(--border2); }
@@ -69,28 +61,24 @@
     .hero-sub { font-size: clamp(14px, 1.5vw, 16px); font-weight: 300; color: var(--muted); width: 100%; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fadeUp 0.7s 0.35s forwards; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.45s forwards; }
 
-    /* BUTTONS */
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 100px; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; transition: all 0.2s; cursor: pointer; }
     .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
     .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
     .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border2); }
     .btn-ghost:hover { border-color: var(--btn-ghost-hover-border); background: var(--btn-ghost-hover-bg); }
 
-    /* ABOUT */
     .about { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); }
     .about-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
     .about-body { font-size: clamp(15px, 1.6vw, 18px); font-weight: 300; color: var(--about-body-color); line-height: 1.85; width: 100%; }
     .about-body p + p { margin-top: 1.25rem; }
     .about-body strong { color: var(--text); font-weight: 500; }
 
-    /* COMING */
     .coming { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); }
     .coming-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .coming-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
     .coming-title { font-weight: 900; font-size: clamp(24px, 3vw, 36px); letter-spacing: -0.02em; color: var(--text); }
     .coming-note { font-size: 13px; color: var(--muted); }
 
-    /* CONTACT */
     .contact { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: center; }
     .contact-title { font-weight: 900; font-size: clamp(36px, 5vw, 60px); line-height: 1.0; letter-spacing: -0.03em; color: var(--text); }
     .contact-links { display: flex; flex-direction: column; gap: 10px; }
@@ -102,11 +90,9 @@
     .contact-btn-icon svg { width: 18px; height: 18px; fill: var(--muted); }
     .contact-btn-arrow { color: var(--muted); font-size: 15px; flex-shrink: 0; }
 
-    /* FOOTER */
     footer { padding: 2rem clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     footer p { font-size: 12px; color: var(--muted); }
 
-    /* LANG HIDDEN */
     [data-lang="pt"] .lang-en { display: none; }
     [data-lang="en"] .lang-pt { display: none; }
 
@@ -163,7 +149,7 @@
     <p class="hero-sub lang-pt">Senior Product Designer com background em Direção de Arte e atuação em produtos digitais desde 2018. Especialista em Design Systems multibrand e experiências de média e alta complexidade.</p>
     <p class="hero-sub lang-en">Senior Product Designer with an Art Direction background and experience in digital products since 2018. Specialist in multibrand Design Systems and medium-to-high complexity experiences.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#5c36293035337231393030331c3b313d3530723f3331">
+      <a class="btn btn-primary" id="email-hero" href="#">
         <span class="lang-pt">Entrar em contato</span>
         <span class="lang-en">Get in touch</span>
       </a>
@@ -220,14 +206,14 @@
       </h2>
     </div>
     <div class="contact-links">
-      <a class="contact-btn" href="/cdn-cgi/l/email-protection#f298879e9b9ddc9f979e9e9db2959f939b9edc919d9f">
+      <a class="contact-btn" id="email-contact" href="#">
         <div class="contact-btn-label">
           <div class="contact-btn-icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
-          <strong><span class="__cf_email__" data-cfemail="39534c55505617545c555556795e54585055175a5654">[email&#160;protected]</span></strong>
+          <strong><span id="email-text"></span></strong>
         </div>
-        <span class="contact-btn-arrow">→</span>
+        <span class="contact-btn-arrow">&rarr;</span>
       </a>
       <a class="contact-btn" href="https://www.linkedin.com/in/juliodemello/" target="_blank" rel="noopener">
         <div class="contact-btn-label">
@@ -236,37 +222,50 @@
           </div>
           <strong>linkedin.com/in/juliodemello</strong>
         </div>
-        <span class="contact-btn-arrow">→</span>
+        <span class="contact-btn-arrow">&rarr;</span>
       </a>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Demello Design Co.</p>
+    <p>&copy; 2026 Demello Design Co.</p>
     <p>São Paulo, BR</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const html = document.documentElement;
-    const logo = document.getElementById('nav-logo-img');
+  <script>
+    (function() {
+      var u = 'julio' + '.' + 'mello' + '@' + 'gmail' + '.' + 'com';
+      var hero = document.getElementById('email-hero');
+      var contact = document.getElementById('email-contact');
+      var txt = document.getElementById('email-text');
+      if (hero) hero.href = 'mai' + 'lto:' + u;
+      if (contact) contact.href = 'mai' + 'lto:' + u;
+      if (txt) txt.textContent = u;
 
-    // Theme
-    const themeBtn = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', savedTheme);
-    updateLogo(savedTheme);
+      var html = document.documentElement;
+      var logo = document.getElementById('nav-logo-img');
 
-    themeBtn.addEventListener('click', () => {
-      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateLogo(next);
-    });
+      var savedTheme = localStorage.getItem('theme') || 'dark';
+      html.setAttribute('data-theme', savedTheme);
+      if (logo) logo.src = savedTheme === 'light' ? 'ddc-horizontal-black.svg' : 'ddc-horizontal-white.svg';
 
-    function updateLogo(theme) {
-      logo.src = theme === 'light' ? 'ddc-horizontal-black.svg' : 'ddc-horizontal-white.svg';
-    }
+      var savedLang = localStorage.getItem('lang') || 'pt';
+      html.setAttribute('data-lang', savedLang);
 
-    // Language
-    const langBtn = document.getElementById('langToggle');
-    const savedLang = localStorage.getItem('lang') || 'pt';
+      document.getElementById('themeToggle').addEventListener('click', function() {
+        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        if (logo) logo.src = next === 'light' ? 'ddc-horizontal-black.svg' : 'ddc-horizontal-white.svg';
+      });
+
+      document.getElementById('langToggle').addEventListener('click', function() {
+        var next = html.getAttribute('data-lang') === 'pt' ? 'en' : 'pt';
+        html.setAttribute('data-lang', next);
+        localStorage.setItem('lang', next);
+      });
+    })();
+  </script>
+
+</body>
+</html>
