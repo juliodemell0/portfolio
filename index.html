@@ -39,7 +39,7 @@
     /* ── 3. TIPOGRAFIA & BODY
        Fonte principal Inter, peso leve por padrão.
        Transição suave ao trocar de tema. ── */
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.6; min-height: 100vh; transition: background 0.3s, color 0.3s; }
 
     /* ── 4. NAVEGAÇÃO
@@ -64,6 +64,11 @@
     [data-theme="light"] .icon-sun { display: block; }
     [data-theme="light"] .icon-moon { display: none; }
     .lang-toggle { padding: 0 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; gap: 6px; }
+    .lang-dropdown { position: relative; }
+    .lang-dropdown-menu { display: none; position: absolute; top: calc(100% + 6px); right: 0; background: var(--bg2); border: 1px solid var(--border2); border-radius: 10px; overflow: hidden; min-width: 100%; z-index: 200; }
+    .lang-dropdown-menu.open { display: block; }
+    .lang-option { display: flex; align-items: center; width: 100%; padding: 8px 14px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; cursor: pointer; background: transparent; border: none; color: var(--text); white-space: nowrap; }
+    .lang-option:hover { background: var(--bg3); }
 
     /* ── 5. HERO
        Seção de abertura com avatar, título e subtítulo.
@@ -78,6 +83,7 @@
     .hero-title span[style] { color: var(--accent); }
     .hero-sub { font-size: clamp(14px, 1.5vw, 16px); font-weight: 300; color: var(--muted); width: 100%; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fadeUp 0.7s 0.35s forwards; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.45s forwards; }
+    .hero-available { display: none; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); background: rgba(61,186,126,0.08); border-radius: 100px; padding: 5px 12px; margin-top: 0.75rem; width: fit-content; animation: badgePulse 2.5s infinite; }
 
     /* ── 6. BOTÕES
        Dois estilos: primário (preenchido) e ghost (contorno).
@@ -90,7 +96,6 @@
 
     /* ── 7. ABOUT ── */
     .about { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); }
-    .about-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
     .about-body { font-size: clamp(15px, 1.6vw, 18px); font-weight: 300; color: var(--about-body-color); line-height: 1.85; width: 100%; }
     .about-body p + p { margin-top: 1.25rem; }
     .about-body strong { color: var(--text); font-weight: 500; }
@@ -98,14 +103,14 @@
     /* ── 8. COMING SOON / PROJETOS ── */
     .coming { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); }
     .coming-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .coming-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
-    .coming-title { font-weight: 900; font-size: clamp(24px, 3vw, 36px); letter-spacing: -0.02em; color: var(--text); }
     .coming-note { font-size: 13px; color: var(--muted); }
 
     /* ── 9. CONTACT
        Layout em duas colunas: título à esquerda, links à direita. ── */
     .contact { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: center; }
-    .contact-title { font-weight: 900; font-size: clamp(36px, 5vw, 60px); line-height: 1.0; letter-spacing: -0.03em; color: var(--text); }
+
+    /* Heading compartilhado entre About, Projects e Contact ── */
+    .section-title { font-weight: 900; font-size: clamp(36px, 5vw, 60px); line-height: 1.0; letter-spacing: -0.03em; color: var(--text); margin-bottom: 2rem; }
     .contact-links { display: flex; flex-direction: column; gap: 10px; }
     .contact-btn { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border: 1px solid var(--border2); border-radius: 100px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 400; transition: all 0.2s; background: transparent; }
     .contact-btn:hover { background: var(--contact-hover); border-color: var(--contact-hover-border); }
@@ -128,13 +133,18 @@
     /* ── 12. ANIMAÇÕES ── */
     @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes badgePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
 
     /* ── 13. RESPONSIVO
        Em telas pequenas: contact vira coluna única, hero empilha avatar e texto. ── */
     @media (max-width: 768px) {
       .about, .contact { grid-template-columns: 1fr; }
-      .hero-inner { flex-direction: column; align-items: flex-start; }
-      .nav-badge span { display: none; }
+      .hero { text-align: center; align-items: center; }
+      .hero-inner { flex-direction: column; align-items: center; }
+      .hero-tag { display: none; }
+      .hero-available { display: block; margin: 0.75rem auto 0; }
+      .hero-actions { justify-content: center; }
+      .nav-badge { display: none; }
     }
   </style>
 </head>
@@ -155,10 +165,17 @@
         <span class="lang-pt">Disponível para novos projetos</span>
         <span class="lang-en">Available for new projects</span>
       </div>
-      <button class="nav-toggle lang-toggle" id="langToggle" aria-label="Switch language">
-        <span class="lang-pt">🇺🇸 EN</span>
-        <span class="lang-en">🇧🇷 PT</span>
-      </button>
+      <div class="lang-dropdown" id="langDropdownWrapper">
+        <button class="nav-toggle lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-pt">🇧🇷 PT</span>
+          <span class="lang-en">🇺🇸 EN</span>
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style="margin-left:2px;opacity:0.5"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lang-dropdown-menu" id="langMenu">
+          <button class="lang-option" data-lang="pt">🇧🇷 PT</button>
+          <button class="lang-option" data-lang="en">🇺🇸 EN</button>
+        </div>
+      </div>
       <button class="nav-toggle theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -183,12 +200,14 @@
           <span class="lang-pt">Olá, eu sou o <span style="color:var(--accent)">Júlio</span></span>
           <span class="lang-en">Hi, I'm <span style="color:var(--accent)">Júlio</span></span>
         </h1>
+        <p class="hero-available lang-pt">Disponível para novos projetos</p>
+        <p class="hero-available lang-en">Available for new projects</p>
       </div>
     </div>
     <p class="hero-sub lang-pt">Senior Product Designer com background em Direção de Arte e atuação em produtos digitais desde 2018. Especialista em Design Systems multibrand e experiências de média e alta complexidade.</p>
     <p class="hero-sub lang-en">Senior Product Designer with an Art Direction background and experience in digital products since 2018. Specialist in multibrand Design Systems and medium-to-high complexity experiences.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" id="email-hero" href="#">
+      <a class="btn btn-primary" href="#contato">
         <span class="lang-pt">Entrar em contato</span>
         <span class="lang-en">Get in touch</span>
       </a>
@@ -203,10 +222,10 @@
        ABOUT — texto de apresentação profissional
        ═══════════════════════════════════════════ -->
   <section class="about" id="sobre">
-    <div class="about-label">
+    <h2 class="section-title">
       <span class="lang-pt">Sobre mim</span>
       <span class="lang-en">About me</span>
-    </div>
+    </h2>
     <div class="about-body">
       <div class="lang-pt">
         <p><strong>Product Designer</strong> com background em Direção de Arte e atuação em <strong>produtos digitais desde 2018</strong>, com experiência em soluções de <strong>média e alta complexidade</strong> para os mercados <strong>financeiro, crédito, meios de pagamento, seguros, saúde digital</strong> incluindo telemedicina, e-commerce e entretenimento.</p>
@@ -226,16 +245,10 @@
        ═══════════════════════════════════════════ -->
   <section class="coming" id="projetos">
     <div class="coming-header">
-      <div>
-        <div class="coming-label">
-          <span class="lang-pt">Projetos selecionados</span>
-          <span class="lang-en">Selected projects</span>
-        </div>
-        <h2 class="coming-title">
-          <span class="lang-pt">Cases em desenvolvimento</span>
-          <span class="lang-en">Cases in progress</span>
-        </h2>
-      </div>
+      <h2 class="section-title">
+        <span class="lang-pt">Projetos selecionados</span>
+        <span class="lang-en">Selected projects</span>
+      </h2>
       <span class="coming-note">
         <span class="lang-pt">Em breve por aqui</span>
         <span class="lang-en">Coming soon</span>
@@ -248,7 +261,7 @@
        ═══════════════════════════════════════════ -->
   <section class="contact" id="contato">
     <div>
-      <h2 class="contact-title">
+      <h2 class="section-title">
         <span class="lang-pt">Vamos<br><span style="color:var(--accent)">conversar?</span></span>
         <span class="lang-en">Let's<br><span style="color:var(--accent)">talk?</span></span>
       </h2>
@@ -295,10 +308,8 @@
       // O endereço é montado em partes para dificultar a leitura
       // por bots que varrem o HTML em busca de e-mails.
       var u = 'julio' + '.' + 'mello' + '@' + 'gmail' + '.' + 'com';
-      var hero    = document.getElementById('email-hero');
       var contact = document.getElementById('email-contact');
       var txt     = document.getElementById('email-text');
-      if (hero)    hero.href     = 'mai' + 'lto:' + u;
       if (contact) contact.href  = 'mai' + 'lto:' + u;
       if (txt)     txt.textContent = u;
 
@@ -324,11 +335,22 @@
         if (logo) logo.src = next === 'light' ? 'ddc-horizontal-black.svg' : 'ddc-horizontal-white.svg';
       });
 
-      // ── Evento: alternar idioma PT/EN ao clicar no botão
-      document.getElementById('langToggle').addEventListener('click', function() {
-        var next = html.getAttribute('data-lang') === 'pt' ? 'en' : 'pt';
+      // ── Evento: dropdown de idioma PT/EN
+      var langMenu = document.getElementById('langMenu');
+      document.getElementById('langToggle').addEventListener('click', function(e) {
+        e.stopPropagation();
+        langMenu.classList.toggle('open');
+      });
+      langMenu.addEventListener('click', function(e) {
+        var opt = e.target.closest('.lang-option');
+        if (!opt) return;
+        var next = opt.getAttribute('data-lang');
         html.setAttribute('data-lang', next);
-        localStorage.setItem('lang', next); // persiste para a próxima visita
+        localStorage.setItem('lang', next);
+        langMenu.classList.remove('open');
+      });
+      document.addEventListener('click', function() {
+        langMenu.classList.remove('open');
       });
 
     })();
