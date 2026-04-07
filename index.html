@@ -110,7 +110,8 @@
     .contact { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: center; }
 
     /* Heading compartilhado entre About, Projects e Contact ── */
-    .section-title { font-weight: 900; font-size: clamp(36px, 5vw, 60px); line-height: 1.0; letter-spacing: -0.03em; color: var(--text); margin-bottom: 2rem; }
+    .section-title { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.0; letter-spacing: 0; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
+    .contact-title { font-weight: 900; font-size: clamp(36px, 5vw, 60px); line-height: 1.0; letter-spacing: -0.03em; color: var(--text); margin-bottom: 2rem; }
     .contact-links { display: flex; flex-direction: column; gap: 10px; }
     .contact-btn { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border: 1px solid var(--border2); border-radius: 100px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 400; transition: all 0.2s; background: transparent; }
     .contact-btn:hover { background: var(--contact-hover); border-color: var(--contact-hover-border); }
@@ -145,6 +146,7 @@
       .hero-available { display: block; margin: 0.75rem auto 0; }
       .hero-actions { justify-content: center; }
       .nav-badge { display: none; }
+      .nav-logo img { height: 24px; }
     }
   </style>
 </head>
@@ -222,10 +224,10 @@
        ABOUT — texto de apresentação profissional
        ═══════════════════════════════════════════ -->
   <section class="about" id="sobre">
-    <h2 class="section-title">
+    <h3 class="section-title">
       <span class="lang-pt">Sobre mim</span>
       <span class="lang-en">About me</span>
-    </h2>
+    </h3>
     <div class="about-body">
       <div class="lang-pt">
         <p><strong>Product Designer</strong> com background em Direção de Arte e atuação em <strong>produtos digitais desde 2018</strong>, com experiência em soluções de <strong>média e alta complexidade</strong> para os mercados <strong>financeiro, crédito, meios de pagamento, seguros, saúde digital</strong> incluindo telemedicina, e-commerce e entretenimento.</p>
@@ -245,10 +247,10 @@
        ═══════════════════════════════════════════ -->
   <section class="coming" id="projetos">
     <div class="coming-header">
-      <h2 class="section-title">
+      <h3 class="section-title">
         <span class="lang-pt">Projetos selecionados</span>
         <span class="lang-en">Selected projects</span>
-      </h2>
+      </h3>
       <span class="coming-note">
         <span class="lang-pt">Em breve por aqui</span>
         <span class="lang-en">Coming soon</span>
@@ -261,7 +263,7 @@
        ═══════════════════════════════════════════ -->
   <section class="contact" id="contato">
     <div>
-      <h2 class="section-title">
+      <h2 class="contact-title">
         <span class="lang-pt">Vamos<br><span style="color:var(--accent)">conversar?</span></span>
         <span class="lang-en">Let's<br><span style="color:var(--accent)">talk?</span></span>
       </h2>
