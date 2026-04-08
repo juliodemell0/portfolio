@@ -21,14 +21,6 @@ Tema padrão: dark mode. Idioma padrão: PT. Visitantes podem alternar pelo head
 
 ---
 
-## Como atualizar o site
-
-- Vá ao repositório em **github.com/juliodemell0/portfolio**
-- Clique no arquivo a substituir → **"..."** → **"Replace file"**
-- Confirme o commit — alterações ficam no ar em menos de 1 minuto
-
----
-
 ## Toggle de tema
 
 | Tema | Logo carregada |
@@ -51,31 +43,9 @@ A preferência fica salva no navegador do visitante via `localStorage`.
 
 ---
 
-## Domínio
-
-Domínio registrado no **Registro.br**: `demello.art.br`
-
-DNS configurado com:
-- 4 registros **A** apontando para os IPs do GitHub Pages
-- 1 registro **CNAME** `www` apontando para `juliodemell0.github.io.`
-
-HTTPS ativo via GitHub Pages (Enforce HTTPS).
-
----
-
 ## Redirecionamento da URL antiga
 
 O arquivo `404.html` redireciona automaticamente qualquer acesso à URL antiga `https://juliodemell0.github.io/portfolio/` para `https://demello.art.br`.
-
----
-
-## Domínio personalizado (manutenção)
-
-Se o domínio precisar ser reconfigurado:
-
-1. Em **Settings → Pages**, adicione `demello.art.br` em **Custom domain**
-2. Configure 4 registros **A** (IPs do GitHub Pages) e 1 registro **CNAME** `www` apontando para `juliodemell0.github.io.`
-3. Ative **Enforce HTTPS** após a propagação
 
 ---
 
