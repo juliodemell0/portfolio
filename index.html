@@ -50,8 +50,6 @@
     .nav-logo { display: flex; align-items: center; text-decoration: none; }
     .nav-logo img { height: 28px; width: auto; display: block; }
     .nav-right { display: flex; align-items: center; gap: 0.75rem; }
-    .nav-badge { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 400; color: var(--muted); letter-spacing: 0.02em; }
-    .nav-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: pulse 2.5s infinite; }
 
     /* Botões de toggle (tema e idioma) compartilham a classe .nav-toggle */
     .nav-toggle { display: flex; align-items: center; justify-content: center; height: 36px; border-radius: 100px; border: 1px solid var(--border2); background: transparent; cursor: pointer; color: var(--muted); transition: all 0.2s; flex-shrink: 0; }
@@ -83,7 +81,6 @@
     .hero-title span[style] { color: var(--accent); }
     .hero-sub { font-size: clamp(14px, 1.5vw, 16px); font-weight: 300; color: var(--muted); width: 100%; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fadeUp 0.7s 0.35s forwards; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.45s forwards; }
-    .hero-available { display: none; font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); border: 1px solid var(--green); background: rgba(61,186,126,0.08); border-radius: 100px; padding: 5px 12px; margin-top: 0.75rem; width: fit-content; animation: badgePulse 2.5s infinite; }
 
     /* ── 6. BOTÕES
        Dois estilos: primário (preenchido) e ghost (contorno).
@@ -112,7 +109,7 @@
     /* Heading compartilhado entre About, Projects e Contact ── */
     .section-title { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.0; letter-spacing: 0; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; }
     .contact-title { font-weight: 900; font-size: clamp(36px, 5vw, 60px); line-height: 1.0; letter-spacing: -0.03em; color: var(--text); margin-bottom: 2rem; }
-    .contact-subtitle { margin-top: 16px; font-size: clamp(14px, 1.6vw, 17px); line-height: 1.6; color: var(--text-secondary, #aaa); max-width: 480px; }
+    .contact-subtitle { margin-top: 16px; font-size: clamp(14px, 1.6vw, 17px); line-height: 1.6; color: var(--muted); max-width: 480px; }
     .contact-links { display: flex; flex-direction: column; gap: 10px; }
     .contact-btn { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border: 1px solid var(--border2); border-radius: 100px; text-decoration: none; color: var(--text); font-size: 14px; font-weight: 400; transition: all 0.2s; background: transparent; }
     .contact-btn:hover { background: var(--contact-hover); border-color: var(--contact-hover-border); }
@@ -163,12 +160,7 @@
       </a>
     </div>
     <div class="nav-right">
-      <div class="nav-badge">
-        <div class="nav-badge-dot"></div>
-        <span class="lang-pt">Disponível para novos projetos</span>
-        <span class="lang-en">Available for new projects</span>
-      </div>
-      <div class="lang-dropdown" id="langDropdownWrapper">
+<div class="lang-dropdown" id="langDropdownWrapper">
         <button class="nav-toggle lang-toggle" id="langToggle" aria-label="Switch language">
           <span class="lang-pt">🇧🇷 PT</span>
           <span class="lang-en">🇺🇸 EN</span>
@@ -203,8 +195,6 @@
           <span class="lang-pt">Olá, eu sou o <span style="color:var(--accent)">Júlio</span></span>
           <span class="lang-en">Hi, I'm <span style="color:var(--accent)">Júlio</span></span>
         </h1>
-        <p class="hero-available lang-pt">Disponível para novos projetos</p>
-        <p class="hero-available lang-en">Available for new projects</p>
       </div>
     </div>
     <p class="hero-sub lang-pt">Senior Product Designer com background em Direção de Arte e atuação em produtos digitais desde 2018. Especialista em Design Systems multibrand e experiências de média e alta complexidade.</p>
