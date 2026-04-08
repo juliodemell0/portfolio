@@ -20,7 +20,7 @@
     :root, [data-theme="dark"] {
       --bg: #0D0D0D; --bg2: #141414; --bg3: #1A1A1A;
       --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
-      --text: #F0EDE8; --muted: #888880; --accent: #C8B700; --green: #3DBA7E;
+      --text: #F0EDE8; --muted: #888880; --accent: #C8B700;
       --nav-bg: rgba(13,13,13,0.88);
       --btn-ghost-hover-bg: rgba(255,255,255,0.04); --btn-ghost-hover-border: rgba(255,255,255,0.35);
       --contact-hover: rgba(255,255,255,0.05); --contact-hover-border: rgba(255,255,255,0.3);
@@ -29,7 +29,7 @@
     [data-theme="light"] {
       --bg: #F5F3EE; --bg2: #EDEAE3; --bg3: #E4E1DA;
       --border: rgba(0,0,0,0.08); --border2: rgba(0,0,0,0.14);
-      --text: #111110; --muted: #6B6B65; --accent: #C8B700; --green: #2A9460;
+      --text: #111110; --muted: #6B6B65; --accent: #C8B700;
       --nav-bg: rgba(245,243,238,0.88);
       --btn-ghost-hover-bg: rgba(0,0,0,0.04); --btn-ghost-hover-border: rgba(0,0,0,0.3);
       --contact-hover: rgba(0,0,0,0.04); --contact-hover-border: rgba(0,0,0,0.25);
@@ -43,7 +43,7 @@
     body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.6; min-height: 100vh; transition: background 0.3s, color 0.3s; }
 
     /* ── 4. NAVEGAÇÃO
-       Barra fixa no topo com logo, badge de disponibilidade e botões de toggle.
+       Barra fixa no topo com logo e botões de toggle.
        O backdrop-filter cria o efeito de desfoque no fundo. ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem, 5vw, 4rem); height: 64px; background: var(--nav-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: background 0.3s, border-color 0.3s; }
     .nav-left { display: flex; align-items: center; gap: 1.5rem; }
@@ -78,8 +78,7 @@
     /* Elementos do hero entram com animação fadeUp (definida na seção 10) */
     .hero-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; opacity: 0; animation: fadeUp 0.7s 0.1s forwards; }
     .hero-title { font-family: 'Cal Sans', sans-serif; font-weight: 400; font-size: clamp(40px, 6vw, 80px); line-height: 1.0; letter-spacing: -0.03em; color: var(--text); opacity: 0; animation: fadeUp 0.7s 0.2s forwards; }
-    .hero-title span[style] { color: var(--accent); }
-    .hero-sub { font-size: clamp(14px, 1.5vw, 16px); font-weight: 300; color: var(--muted); width: 100%; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fadeUp 0.7s 0.35s forwards; }
+.hero-sub { font-size: clamp(14px, 1.5vw, 16px); font-weight: 300; color: var(--muted); width: 100%; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fadeUp 0.7s 0.35s forwards; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.45s forwards; }
 
     /* ── 6. BOTÕES
@@ -130,9 +129,7 @@
     [data-lang="en"] .lang-pt { display: none; }
 
     /* ── 12. ANIMAÇÕES ── */
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes badgePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
 
     /* ── 13. RESPONSIVO
        Em telas pequenas: contact vira coluna única, hero empilha avatar e texto. ── */
@@ -141,9 +138,7 @@
       .hero { text-align: center; align-items: center; }
       .hero-inner { flex-direction: column; align-items: center; }
       .hero-tag { display: none; }
-      .hero-available { display: block; margin: 0.75rem auto 0; }
       .hero-actions { justify-content: center; }
-      .nav-badge { display: none; }
       .nav-logo img { height: 24px; }
     }
   </style>
