@@ -16,6 +16,7 @@ Tema padrão: dark mode. Idioma padrão: PT. Visitantes podem alternar pelo head
 | `avatar2026-800x800px.png` | Foto de perfil |
 | `ddc-horizontal-white.svg` | Logo para o tema escuro |
 | `ddc-horizontal-black.svg` | Logo para o tema claro |
+| `favicon-32x32.svg` | Ícone do site (favicon) |
 | `CNAME` | Gerado automaticamente pelo GitHub — não apagar |
 
 ---
@@ -73,7 +74,7 @@ O arquivo `404.html` redireciona automaticamente qualquer acesso à URL antiga `
 Se o domínio precisar ser reconfigurado:
 
 1. Em **Settings → Pages**, adicione `demello.art.br` em **Custom domain**
-2. Configure os registros DNS no Registro.br conforme o arquivo `TUTORIAL-DOMINIO.md`
+2. Configure 4 registros **A** (IPs do GitHub Pages) e 1 registro **CNAME** `www` apontando para `juliodemell0.github.io.`
 3. Ative **Enforce HTTPS** após a propagação
 
 ---
