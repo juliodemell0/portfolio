@@ -100,6 +100,17 @@
     .coming { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); border-top: 1px solid var(--border); }
     .coming-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .coming-note { font-size: 13px; color: var(--muted); }
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+    .project-card { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--bg2); text-decoration: none; transition: border-color 0.2s, transform 0.2s; display: block; }
+    .project-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+    .project-thumb { width: 100%; aspect-ratio: 16 / 9; }
+    .project-card:nth-child(1) .project-thumb { background: linear-gradient(135deg, var(--bg3), rgba(200,183,0,0.12)); }
+    .project-card:nth-child(2) .project-thumb { background: linear-gradient(135deg, var(--bg3), rgba(100,150,255,0.10)); }
+    .project-card:nth-child(3) .project-thumb { background: linear-gradient(135deg, var(--bg3), rgba(180,100,255,0.10)); }
+    .project-card:nth-child(4) .project-thumb { background: linear-gradient(135deg, var(--bg3), rgba(100,210,160,0.10)); }
+    .project-info { padding: 1.25rem 1.5rem; }
+    .project-name { font-size: 15px; font-weight: 500; color: var(--text); line-height: 1.3; margin-bottom: 0.35rem; }
+    .project-company { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 
     /* ── 9. CONTACT
        Layout em duas colunas: título à esquerda, links à direita. ── */
@@ -135,6 +146,7 @@
        Em telas pequenas: contact vira coluna única, hero empilha avatar e texto. ── */
     @media (max-width: 768px) {
       .about, .contact { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
       .hero { text-align: center; align-items: center; }
       .hero-inner { flex-direction: column; align-items: center; }
       .hero-tag { display: none; }
@@ -237,10 +249,39 @@
         <span class="lang-pt">Projetos selecionados</span>
         <span class="lang-en">Selected projects</span>
       </h3>
-      <span class="coming-note">
-        <span class="lang-pt">Em breve por aqui</span>
-        <span class="lang-en">Coming soon</span>
-      </span>
+    </div>
+    <div class="projects-grid">
+      <a class="project-card" href="#">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <p class="project-name">
+            <span class="lang-pt">Provu — Comprovação de Renda automatizada</span>
+            <span class="lang-en">Provu — Automated Income Verification</span>
+          </p>
+          <p class="project-company">Provu</p>
+        </div>
+      </a>
+      <a class="project-card" href="#">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <p class="project-name">Jackpot</p>
+          <p class="project-company">EstrelaBet</p>
+        </div>
+      </a>
+      <a class="project-card" href="#">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <p class="project-name">Nebulosa Design System</p>
+          <p class="project-company">Stellar Gaming</p>
+        </div>
+      </a>
+      <a class="project-card" href="cases/supernova.html">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <p class="project-name">Supernova Design System</p>
+          <p class="project-company">Provu</p>
+        </div>
+      </a>
     </div>
   </section>
 
