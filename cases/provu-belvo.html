@@ -3,13 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supernova Design System — Demello Design Co.</title>
+  <title>Provu: Comprovação de Renda Automatizada — Demello Design Co.</title>
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon-32x32.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@300;400;500;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/case.css">
+  <style>
+    /* Placeholders de imagem */
+    .img-placeholder {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg2);
+      border: 1px dashed var(--border2);
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .case-cover .img-placeholder {
+      height: 100%;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px dashed var(--border2);
+    }
+    .case-img .img-placeholder { aspect-ratio: 16 / 9; }
+
+    /* Métricas — evita corte em valores longos como +24,5pp */
+    .metric-value {
+      font-size: clamp(22px, 3vw, 34px);
+      white-space: nowrap;
+    }
+
+    /* Navegação entre cases — mesma linha, alinhada ao padding do header */
+    .case-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 72px clamp(1.5rem, 5vw, 4rem);
+    }
+  </style>
 </head>
 <body>
 
@@ -45,14 +83,12 @@
   <!-- HERO -->
   <header class="case-hero">
     <div class="case-tags">
-      <span class="tag">Design System</span>
-      <span class="tag">UI Design</span>
-      <span class="tag">UX Design</span>
-      <span class="tag">Design Ops</span>
-      <span class="tag">Branding</span>
+      <span class="tag">Product Design</span>
+      <span class="tag">UX Research</span>
+      <span class="tag">UI/UX</span>
     </div>
-    <h1 class="case-title">Supernova <span>Design System</span></h1>
-    <p class="case-subtitle">Como construímos do zero um Design System completo em menos de um ano, viabilizando o rebranding total de uma fintech brasileira de crédito pessoal.</p>
+    <h1 class="case-title">Provu: <span>Comprovação de Renda Automatizada</span></h1>
+    <p class="case-subtitle">Como uma mudança cirúrgica em uma única tela aumentou a conexão bancária automática de 48,5% para 73%, a partir de pesquisa quantitativa e uma hipótese bem fundamentada.</p>
     <div class="case-meta">
       <div class="case-meta-item">
         <span class="case-meta-label">Empresa</span>
@@ -60,11 +96,11 @@
       </div>
       <div class="case-meta-item">
         <span class="case-meta-label">Ano</span>
-        <span class="case-meta-value">2021</span>
+        <span class="case-meta-value">2022</span>
       </div>
       <div class="case-meta-item">
         <span class="case-meta-label">Papel</span>
-        <span class="case-meta-value">Product Design • Design System</span>
+        <span class="case-meta-value">Product Design • Research • UI/UX</span>
       </div>
       <div class="case-meta-item">
         <span class="case-meta-label">Área</span>
@@ -75,7 +111,7 @@
 
   <!-- COVER -->
   <div class="case-cover">
-    <img src="../assets/img/cover-supernova.png" alt="Supernova Design System — capa">
+    <div class="img-placeholder">Imagem de capa — substituir por imagem real</div>
   </div>
 
   <!-- BODY -->
@@ -84,12 +120,12 @@
     <!-- CONTEXTO -->
     <section class="section">
       <div class="section-label">Contexto</div>
-      <p class="section-text">Em 2021, a Lendico, fintech de crédito pessoal, passou por uma mudança radical: rebranding completo e novo nome, <strong>Provu</strong>. O desafio para o time de design foi imenso: refazer toda a linguagem visual, os design tokens e os componentes do produto <strong>em menos de um ano</strong>, com o lançamento da marca já agendado para novembro. Eram dois produtos distintos, com times separados, atendidos pelo mesmo DS.</p>
-      <p class="section-text">O DS legado carregava a identidade visual da Lendico em cada token. Não havia como reaproveitar: precisávamos construir do zero algo robusto o suficiente para escalar, consistente para unificar dois produtos com times separados, e entregável dentro de um prazo que não movia.</p>
+      <p class="section-text">Na Provu, a comprovação de renda era o ponto de maior fricção no funil de crédito. Havia dois caminhos disponíveis: a conexão automática via <strong>Belvo</strong>, parceiro que acessa o internet banking do usuário e envia apenas o extrato dos últimos 90 dias à mesa de crédito, ou o <strong>envio manual</strong> do extrato em PDF.</p>
+      <p class="section-text">O problema era que a maioria escolhia o caminho errado. Não por preferência real, mas por desconfiança. E essa desconfiança tinha um custo direto: mais trabalho manual para a equipe de crédito, mais tempo de espera para o usuário e menos empréstimos concluídos.</p>
 
       <div class="highlight">
-        <p>"Uma Supernova é responsável por espalhar pelo Universo elementos que evoluem e se tornam outros corpos celestes. Assim também é a nossa missão: evoluir os produtos do universo Provu."</p>
-        <cite>Conceito por trás do nome</cite>
+        <p>"56% dos usuários que escolhiam o envio manual disseram que o motivo era insegurança ao enviar dados bancários. 90,2% nunca tinham ouvido falar da Belvo."</p>
+        <cite>Pesquisa quantitativa via Hotjar — 100 respostas em 7 dias</cite>
       </div>
     </section>
 
@@ -100,16 +136,16 @@
       <div class="section-label">Desafios</div>
       <div class="challenges">
         <div class="challenge">
-          <div class="challenge-icon">🎨</div>
-          <div class="challenge-text"><strong>Atualização total de tokens e componentes.</strong> Todos os design tokens (cores, tipografia, espaçamentos, sombras) precisavam refletir a nova identidade visual, assim como todos os componentes construídos anteriormente.</div>
+          <div class="challenge-icon">📉</div>
+          <div class="challenge-text"><strong>Baixa adesão ao fluxo automático.</strong> Apenas 48,5% dos usuários conectavam a conta via Belvo. Os outros 51,5% enviavam o extrato manualmente, gerando gargalo operacional na mesa de crédito.</div>
         </div>
         <div class="challenge">
-          <div class="challenge-icon">✍️</div>
-          <div class="challenge-text"><strong>Nova linguagem e comunicação.</strong> A voz e o tom da nova marca eram diferentes. Refazer a linguagem dos componentes e da documentação para estar alinhado com o branding da Provu.</div>
+          <div class="challenge-icon">🔒</div>
+          <div class="challenge-text"><strong>Desconfiança como barreira invisível.</strong> A hipótese inicial era que o problema era técnico ou de usabilidade. A pesquisa mostrou que era de confiança: o usuário não conhecia a Belvo e não confiava no processo.</div>
         </div>
         <div class="challenge">
-          <div class="challenge-icon">⏱️</div>
-          <div class="challenge-text"><strong>Curto prazo crítico.</strong> O lançamento da nova marca estava fixo no calendário. Não havia espaço para metodologias longas. O processo precisava ser ágil, colaborativo e com entregas incrementais.</div>
+          <div class="challenge-icon">⚙️</div>
+          <div class="challenge-text"><strong>Escalabilidade comprometida.</strong> O envio manual exigia revisão humana de cada documento. Com o crescimento das originações, a mesa de crédito não escalaria sem automação.</div>
         </div>
       </div>
     </section>
@@ -119,48 +155,47 @@
     <!-- PROCESSO -->
     <section class="section">
       <div class="section-label">Processo</div>
-      <h2 class="section-title">Do entendimento ao handoff.</h2>
 
       <div class="process">
         <div class="process-step">
           <div class="process-number">01</div>
           <div class="process-content">
-            <div class="process-step-title">Onboarding e entrevistas com o time de branding</div>
-            <div class="process-step-text">Conversas estruturadas para entender o moodboard da nova marca: a lógica por trás da paleta de cores, as formas escolhidas, o tom de linguagem e os valores que a Provu queria comunicar. Essa etapa foi fundamental para garantir que o DS não apenas replicasse a marca, mas a expressasse com fidelidade.</div>
+            <div class="process-step-title">Análise de dados com o time de BI</div>
+            <div class="process-step-text">Antes de qualquer hipótese, fui aos dados. O BI apontou que usuários que conectavam via Belvo concluíam o empréstimo em 23% dos casos, contra apenas 8% dos que enviavam o extrato manualmente. Além disso, 95% dos usuários tinham conta em bancos suportados pela Belvo. O potencial estava represado por algo que não era técnico.</div>
           </div>
         </div>
         <div class="process-step">
           <div class="process-number">02</div>
           <div class="process-content">
-            <div class="process-step-title">Brainstorm e kick-off multidisciplinar</div>
-            <div class="process-step-text">Reuniões com todas as áreas envolvidas: desenvolvedores, front-end, QAs e Product Designers dos dois produtos da Provu. Além disso, foram feitas apresentações para stakeholders para reforçar a importância do Design System como produto, e não como uma feature isolada.</div>
+            <div class="process-step-title">Pesquisa quantitativa via Hotjar</div>
+            <div class="process-step-text">Configurei um questionário diretamente na tela de comprovação de renda, no exato momento em que o usuário optava pelo envio manual. Em uma semana, obtive 100 respostas. Os resultados foram reveladores: 56% apontaram insegurança como motivo principal, 90,2% não conheciam a Belvo e 71,8% tinham acesso ao internet banking. O obstáculo era percepção, não capacidade.</div>
           </div>
         </div>
         <div class="process-step">
           <div class="process-number">03</div>
           <div class="process-content">
-            <div class="process-step-title">Auditoria e mapeamento de componentes</div>
-            <div class="process-step-text">Análise profunda do DS legado junto com os Product Designers. Identificação do que poderia ser evoluído, o que precisava ser reconstruído do zero, e quais novos componentes seriam necessários para suportar demandas futuras dos produtos.</div>
+            <div class="process-step-title">Definição da hipótese de design</div>
+            <div class="process-step-text">Com os dados em mãos, a hipótese ficou clara: se apresentarmos a Belvo com mais contexto, credibilidade e ênfase nos atributos de segurança, aumentaremos a adesão ao fluxo automático. A solução não precisava ser uma nova funcionalidade. Precisava ser uma nova comunicação.</div>
           </div>
         </div>
         <div class="process-step">
           <div class="process-number">04</div>
           <div class="process-content">
-            <div class="process-step-title">Redesign dos tokens e componentes</div>
-            <div class="process-step-text">Fui responsável pela definição da arquitetura de tokens em três camadas (primitivos, semânticos e específicos de componente) e pela reconstrução dos componentes: Alert, Badge, Botões, Cards, Formulários, Header, Loader, Modal, Tabs e mais. Cada componente entregue com documentação de anatomia, variações e casos de uso, e validado com o time de front-end antes de entrar no backlog de implementação.</div>
+            <div class="process-step-title">Redesign da tela de comprovação de renda</div>
+            <div class="process-step-text">Redesenhei a tela eliminando a falsa paridade entre as duas opções. A nova versão apresentava a conexão via Belvo como padrão, com destaque para segurança, agilidade e privacidade dos dados. O envio manual foi mantido como opção secundária: acessível, mas desprivilegiada visualmente. Uma mudança de hierarquia, não de funcionalidade.</div>
           </div>
         </div>
         <div class="process-step">
           <div class="process-number">05</div>
           <div class="process-content">
-            <div class="process-step-title">Handoff e implementação no Storybook</div>
-            <div class="process-step-text">Por ter sido um processo construído em conjunto com o time de desenvolvimento desde o início, o handoff foi natural e sem fricção. O Supernova foi implementado no Storybook, tornando-se a fonte única de verdade para design e engenharia.</div>
+            <div class="process-step-title">Monitoramento pós-lançamento</div>
+            <div class="process-step-text">Após o deploy, acompanhei os dados de conversão via dashboard de BI. O resultado foi medido sobre uma base de 4.601 usuários únicos na tela de comprovação de renda.</div>
           </div>
         </div>
       </div>
 
       <div class="case-img">
-        <img src="../assets/img/case-img-01.png" alt="Screenshot do Design System Canvas">
+        <div class="img-placeholder">Antes e depois da tela de comprovação de renda — substituir por imagem real</div>
       </div>
     </section>
 
@@ -169,21 +204,15 @@
     <!-- SOLUÇÃO -->
     <section class="section">
       <div class="section-label">Solução</div>
-      <p class="section-text">O resultado foi um Design System completo, com documentação clara, componentes testados e uma estrutura de tokens que permitia <strong>consistência visual entre os dois produtos</strong> da Provu simultaneamente. A nomenclatura do sistema acompanhou o universo temático da marca: squads e ambientes de QA/Sandbox receberam nomes de planetas derivados da Supernova.</p>
+      <p class="section-text">A nova tela eliminou a paridade visual entre as duas opções. Em vez de apresentar conexão automática e envio manual como escolhas equivalentes, a interface passou a ter uma hierarquia clara: a Belvo como caminho principal, com comunicação direta sobre segurança e privacidade, e o envio manual como alternativa secundária, acessível mas fora do foco visual.</p>
+      <p class="section-text">Nenhuma nova funcionalidade foi desenvolvida. A mudança foi inteiramente de <strong>comunicação e hierarquia visual</strong>. O mesmo fluxo, com uma leitura diferente do que era esperado do usuário.</p>
 
-      <div class="case-cta">
-        <a class="btn btn-yellow" href="https://zeroheight.com/1ff85f6db/p/80c4cd-supernova-" target="_blank" rel="noopener noreferrer">
-          Ver documentação completa
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </a>
+      <div class="case-img">
+        <div class="img-placeholder">Screenshot da tela redesenhada com foco na Belvo — substituir por imagem real</div>
       </div>
 
       <div class="case-img">
-        <img src="../assets/img/case-img-02.png" alt="Screenshot da biblioteca de componentes no Figma">
-      </div>
-
-      <div class="case-img">
-        <img src="../assets/img/case-img-03.png" alt="Screenshot do Storybook com componentes implementados">
+        <div class="img-placeholder">Gráfico de acompanhamento pós-lançamento (73% vs 27%) — substituir por imagem real</div>
       </div>
     </section>
 
@@ -192,43 +221,42 @@
     <!-- RESULTADOS -->
     <section class="section">
       <div class="section-label">Resultados</div>
-      <h2 class="section-title">Escala, consistência e velocidade.</h2>
 
       <div class="metrics">
         <div class="metric">
-          <div class="metric-value">&lt;1 ano</div>
-          <div class="metric-label">Do kick-off ao lançamento da nova marca</div>
+          <div class="metric-value">73%</div>
+          <div class="metric-label">De conexão bancária automática após o redesign</div>
         </div>
         <div class="metric">
-          <div class="metric-value">2</div>
-          <div class="metric-label">Produtos unificados pelo mesmo Design System</div>
+          <div class="metric-value">+24,5pp</div>
+          <div class="metric-label">De aumento na adesão ao fluxo via Belvo</div>
         </div>
         <div class="metric">
-          <div class="metric-value">30+</div>
-          <div class="metric-label">Componentes criados e documentados</div>
+          <div class="metric-value">4.601</div>
+          <div class="metric-label">Usuários únicos medidos no período pós-lançamento</div>
         </div>
         <div class="metric">
-          <div class="metric-value">6</div>
-          <div class="metric-label">Squads e tribos utilizando o Design System</div>
+          <div class="metric-value">1 tela</div>
+          <div class="metric-label">Alterada para gerar o resultado</div>
         </div>
       </div>
 
       <div class="outcomes">
         <div class="outcome">
-          <div class="outcome-title">Consistência garantida</div>
-          <div class="outcome-text">Tokens centralizados eliminaram inconsistências visuais entre produtos e plataformas.</div>
+          <div class="outcome-title">Menos trabalho manual</div>
+          <div class="outcome-text">Redução expressiva no volume de extratos enviados manualmente para revisão pela mesa de crédito.</div>
         </div>
         <div class="outcome">
-          <div class="outcome-title">Velocidade de entrega</div>
-          <div class="outcome-text">Componentes reutilizáveis reduziram o tempo de design e desenvolvimento de novas features.</div>
+          <div class="outcome-title">Análise mais rápida</div>
+          <div class="outcome-text">Com mais conexões automáticas, a análise de crédito passou a ser processada em minutos, não horas.</div>
         </div>
         <div class="outcome">
-          <div class="outcome-title">Governança estabelecida</div>
-          <div class="outcome-text">O DS foi posicionado como produto da empresa, com processo claro de contribuição e evolução.</div>
+          <div class="outcome-title">Base para automação futura</div>
+          <div class="outcome-text">O aumento de conexões via Belvo abriu caminho para automatizar completamente o processo de comprovação de renda em versões futuras.</div>
         </div>
         <div class="outcome">
-          <div class="outcome-title">Alinhamento total</div>
-          <div class="outcome-text">Design e desenvolvimento trabalhando da mesma fonte de verdade via Storybook.</div>
+          <div class="outcome-title">Hipótese validada</div>
+          <div class="outcome-text">A pesquisa do Hotjar provou que o obstáculo era percepção, não capacidade técnica. O redesign confirmou isso com dados reais.</div>
         </div>
       </div>
     </section>
@@ -239,16 +267,20 @@
     <section class="section">
       <div class="section-label">Aprendizados</div>
       <h2 class="section-title">O que esse projeto me ensinou.</h2>
-      <p class="section-text">O maior risco do projeto não era técnico: era político. Convencer stakeholders de que o DS deveria ser tratado como produto, com backlog e priorização próprios, foi a batalha mais difícil. A tentação de tratar o rebranding como um projeto de sprint único era real.</p>
-      <p class="section-text">Aprendi que a documentação não é entregável secundário: ela é o produto. Um componente sem documentação clara é um componente que será implementado de forma errada ou ignorado. Nesse projeto, a decisão de não lançar nenhum componente sem anatomia e casos de uso documentados foi o que garantiu a adoção real pelos times.</p>
+      <p class="section-text">O maior aprendizado desse projeto foi entender que <strong>nem todo problema de conversão é um problema de usabilidade</strong>. A tela original funcionava bem tecnicamente. O usuário conseguia navegar, entender as opções e fazer uma escolha. O problema era o que ele sentia ao fazer essa escolha: desconfiança em algo que não conhecia.</p>
+      <p class="section-text">Pesquisar antes de redesenhar foi o que separou uma solução efetiva de uma suposição bem desenhada. Os dados do Hotjar deram direção precisa para onde investir o esforço de design. Sem eles, poderíamos ter redesenhado o fluxo inteiro e errado o alvo.</p>
     </section>
 
   </main>
 
-  <div class="back-home">
-    <a class="btn btn-ghost" href="../index.html">
+  <div class="case-nav">
+    <a class="btn btn-ghost" href="../supernova/supernova.html">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      Voltar para a home
+      Case anterior
+    </a>
+    <a class="btn btn-ghost" href="../supernova/supernova.html">
+      Próximo case
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
   </div>
 
