@@ -1,0 +1,230 @@
+/* ─── 1. RESET & BOX-SIZING ─────────────────────────────────
+   Remove margens e paddings padrão do browser.
+   Define box-sizing: border-box globalmente para que padding
+   e bordas sejam incluídos na largura/altura dos elementos.
+─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── 2. VARIÁVEIS DE TEMA ───────────────────────────────────
+   Tokens de design (cores, bordas, fundos) separados por tema.
+   O tema escuro é o padrão (aplicado via :root e [data-theme="dark"]).
+   O tema claro é ativado adicionando data-theme="light" no <html>.
+   Para alterar uma cor, edite os dois blocos abaixo.
+─────────────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --bg:  #0D0D0D;
+  --bg2: #141414;
+  --bg3: #1A1A1A;
+  --border:  rgba(255, 255, 255, 0.08);
+  --border2: rgba(255, 255, 255, 0.14);
+  --text:   #F0EDE8;
+  --muted:  #888880;
+  --accent: #C8B700;
+  --nav-bg: rgba(13, 13, 13, 0.88);
+  --btn-ghost-hover-bg:     rgba(255, 255, 255, 0.04);
+  --btn-ghost-hover-border: rgba(255, 255, 255, 0.35);
+  --contact-hover:        rgba(255, 255, 255, 0.05);
+  --contact-hover-border: rgba(255, 255, 255, 0.30);
+  --about-body-color: #999;
+}
+
+[data-theme="light"] {
+  --bg:  #F5F3EE;
+  --bg2: #EDEAE3;
+  --bg3: #E4E1DA;
+  --border:  rgba(0, 0, 0, 0.08);
+  --border2: rgba(0, 0, 0, 0.14);
+  --text:   #111110;
+  --muted:  #6B6B65;
+  --accent: #C8B700;
+  --nav-bg: rgba(245, 243, 238, 0.88);
+  --btn-ghost-hover-bg:     rgba(0, 0, 0, 0.04);
+  --btn-ghost-hover-border: rgba(0, 0, 0, 0.30);
+  --contact-hover:        rgba(0, 0, 0, 0.04);
+  --contact-hover-border: rgba(0, 0, 0, 0.25);
+  --about-body-color: #555550;
+}
+
+/* ─── 3. TIPOGRAFIA & BODY ───────────────────────────────────
+   Fonte principal: Inter (carregada via Google Fonts).
+   Scroll suave com offset para compensar a nav fixa (64px).
+   Transição no background e na cor ao trocar de tema.
+─────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 64px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ─── 4. NAVEGAÇÃO ───────────────────────────────────────────
+   Barra fixa no topo com efeito de desfoque (backdrop-filter).
+   Contém logo, seletor de idioma (PT/EN) e botão de tema.
+   Altura fixa de 64px — usada como referência no padding-top
+   das seções que ficam abaixo da nav.
+─────────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  height: 64px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.nav-left  { display: flex; align-items: center; gap: 1.5rem; }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+
+.nav-logo     { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 28px; width: auto; display: block; }
+
+/* Estilo base compartilhado pelos botões de toggle (tema e idioma) */
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  border-radius: 100px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.nav-toggle:hover {
+  border-color: var(--text);
+  color: var(--text);
+  background: var(--bg2);
+}
+
+/* Botão de tema — tamanho fixo quadrado para acomodar o ícone */
+.theme-toggle     { width: 36px; }
+.theme-toggle svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* Alterna entre ícone de sol (tema claro) e lua (tema escuro) */
+.icon-sun  { display: none; }
+.icon-moon { display: block; }
+[data-theme="light"] .icon-sun  { display: block; }
+[data-theme="light"] .icon-moon { display: none; }
+
+/* Botão de idioma — tem padding lateral por ser textual (PT / EN) */
+.lang-toggle {
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  gap: 6px;
+}
+
+/* Dropdown de idioma — aparece abaixo do botão .lang-toggle */
+.lang-dropdown      { position: relative; }
+.lang-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 100%;
+  z-index: 200;
+}
+.lang-dropdown-menu.open { display: block; }
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  white-space: nowrap;
+}
+.lang-option:hover { background: var(--bg3); }
+
+/* ─── 5. BOTÕES COMPARTILHADOS ───────────────────────────────
+   .btn define o estilo base comum a todas as variantes.
+   .btn-ghost é a variante com contorno (usada em ambas as páginas).
+   .btn-primary (variante preenchida) está em index.css.
+─────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border2);
+}
+.btn-ghost:hover {
+  border-color: var(--btn-ghost-hover-border);
+  background: var(--btn-ghost-hover-bg);
+}
+
+/* ─── 6. RODAPÉ ──────────────────────────────────────────────
+   Linha divisória com copyright e localização lado a lado.
+─────────────────────────────────────────────────────────── */
+footer {
+  padding: 2rem clamp(1.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer p { font-size: 12px; color: var(--muted); }
+
+/* ─── 7. CONTROLE DE IDIOMA ──────────────────────────────────
+   Oculta o conteúdo do idioma inativo.
+   Controlado via data-lang="pt" ou "en" no elemento <html>.
+   O script em assets/js/ui.js aplica e persiste essa preferência.
+─────────────────────────────────────────────────────────── */
+[data-lang="pt"] .lang-en { display: none; }
+[data-lang="en"] .lang-pt { display: none; }
+
+.text-accent { color: var(--accent); }
+
+/* ─── 8. RESPONSIVO COMPARTILHADO ───────────────────────────
+   Em telas pequenas, reduz o logo da nav para não sobrepor
+   os botões de toggle.
+─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-logo img { height: 24px; }
+}

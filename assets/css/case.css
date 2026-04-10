@@ -1,0 +1,381 @@
+/* ─── 1. HERO DO CASE STUDY ──────────────────────────────────
+   Cabeçalho da página com tags de categoria, título, subtítulo
+   e metadados (empresa, ano, papel, área).
+   O padding-top compensa a nav fixa (64px) + espaço de respiro.
+─────────────────────────────────────────────────────────── */
+.case-hero {
+  padding: calc(64px + 5rem) clamp(1.5rem, 5vw, 4rem) clamp(3rem, 6vw, 4rem);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Tags de categoria (ex: "Design System", "Branding", "UI Design") */
+.case-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+}
+
+.case-title {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+/* Parte do título em destaque (ex: nome do sistema de design) */
+.case-title span { color: var(--accent); }
+
+.case-subtitle {
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 680px;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* Metadados dispostos em linha horizontal: empresa, ano, papel e área */
+.case-meta      { display: flex; gap: 3rem; flex-wrap: wrap; }
+.case-meta-item { display: flex; flex-direction: column; gap: 4px; }
+
+.case-meta-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.case-meta-value { font-size: 14px; color: var(--muted); }
+
+/* ─── 2. IMAGEM DE CAPA ──────────────────────────────────────
+   Área full-width para a imagem de capa do case study.
+─────────────────────────────────────────────────────────── */
+.case-cover {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.case-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── 3. CORPO DO CONTEÚDO ───────────────────────────────────
+   Coluna centralizada com largura máxima de 780px.
+   Cada bloco de conteúdo usa .section com margem inferior.
+   .section-label: rótulo pequeno em uppercase (ex: "Contexto")
+   .section-title: título Cal Sans de médio porte
+   .section-text:  parágrafo de corpo com destaque via <strong>
+─────────────────────────────────────────────────────────── */
+.case-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 5vw, 2rem);
+  padding-bottom: 0;
+}
+
+.section { margin-bottom: clamp(3.5rem, 6vw, 5rem); }
+main > .section:last-child { margin-bottom: 0; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.section-text {
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: var(--muted);
+  line-height: 1.85;
+}
+.section-text + .section-text { margin-top: 1rem; }
+.section-text strong { color: var(--text); font-weight: 500; }
+
+/* ─── 4. CAIXA DE DESTAQUE ───────────────────────────────────
+   Bloco com borda esquerda colorida para citações ou insights
+   importantes do case study.
+─────────────────────────────────────────────────────────── */
+.highlight {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+.highlight p {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.7;
+  font-style: italic;
+  font-weight: 300;
+}
+.highlight cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 12px;
+  font-style: normal;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─── 5. MÉTRICAS ────────────────────────────────────────────
+   Grid com cards de resultados quantitativos.
+   O gap de 1px com background de borda simula as divisórias
+   internas entre os cards sem precisar de bordas individuais.
+─────────────────────────────────────────────────────────── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.metric { background: var(--bg2); padding: 1.5rem; }
+
+.metric-value {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.metric-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+/* ─── 6. ETAPAS DE PROCESSO ──────────────────────────────────
+   Lista numerada das etapas do processo de design.
+   Cada etapa tem número (Cal Sans), título e descrição.
+   Uma linha divisória separa as etapas, exceto a última.
+─────────────────────────────────────────────────────────── */
+.process { display: flex; flex-direction: column; margin: 2rem 0; }
+
+.process-step {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.process-step:last-child { border-bottom: none; }
+
+.process-number {
+  font-family: 'Cal Sans', sans-serif;
+  font-size: 13px;
+  color: var(--accent);
+  min-width: 24px;
+  padding-top: 2px;
+}
+
+.process-content     { flex: 1; }
+.process-step-title  { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 0.4rem; }
+.process-step-text   { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ─── 7. DESAFIOS ────────────────────────────────────────────
+   Lista de cards de desafios do projeto com ícone e texto.
+─────────────────────────────────────────────────────────── */
+.challenges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.challenge {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.challenge-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.challenge-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.challenge-text strong { color: var(--text); font-weight: 500; }
+
+/* ─── 9. RESULTADOS ──────────────────────────────────────────
+   Grid de 2 colunas com cards de resultado qualitativo.
+─────────────────────────────────────────────────────────── */
+.outcomes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.outcome {
+  padding: 1.25rem 1.5rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.outcome-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 0.4rem; }
+.outcome-text  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ─── 10. DIVISOR ────────────────────────────────────────────
+   Linha decorativa curta na cor de acento, usada para separar
+   visualmente as seções dentro do corpo do case study.
+─────────────────────────────────────────────────────────── */
+.divider {
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin: 3rem 0;
+  border-radius: 2px;
+}
+
+/* ─── 11. BOTÃO VOLTAR ───────────────────────────────────────
+   Área centralizada com botão ghost para retornar à homepage.
+   O ícone SVG de seta usa stroke em vez de fill para aparência
+   mais leve e consistente com o estilo de linha do design.
+─────────────────────────────────────────────────────────── */
+.btn-ghost svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ─── 12. BOTÃO CTA AMARELO ─────────────────────────────────
+   Variante de destaque para CTAs primários nos cases.
+   Fundo #C8B700, texto e ícone em #000000.
+─────────────────────────────────────────────────────────── */
+.btn-yellow {
+  background: var(--accent);
+  color: #000000;
+  border-color: var(--accent);
+}
+.btn-yellow svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.case-cta {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.back-home {
+  padding: 72px clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  justify-content: center;
+}
+
+/* ─── 13. IMAGEM DE CASE ─────────────────────────────────────
+   Contêiner para screenshots reais nos case studies.
+   Imagens responsivas, com borda e cursor de ponteiro para
+   indicar que são clicáveis (abre o lightbox).
+   Margem entre imagens consecutivas: 32px.
+─────────────────────────────────────────────────────────── */
+.case-img {
+  width: 100%;
+  margin: 2rem 0;
+}
+.case-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: zoom-in;
+}
+.case-img + .case-img { margin-top: 32px; }
+
+/* ─── 14. LIGHTBOX ───────────────────────────────────────────
+   Overlay de preview de imagem em tela cheia.
+   Ativado via classe .open. Fundo desfocado com 80% de opacidade.
+   Botão X fixo no canto superior direito para fechar.
+─────────────────────────────────────────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.lightbox.open { display: flex; }
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.lightbox-close:hover {
+  background: var(--bg3);
+  border-color: var(--border2);
+}
+
+/* ─── 13. RESPONSIVO ─────────────────────────────────────────
+   Em telas menores que 768px:
+   - Resultados viram coluna única
+   - Metadados do hero ficam com gap menor
+   - Métricas ficam em 2 colunas (em vez de auto-fit)
+─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .outcomes  { grid-template-columns: 1fr; }
+  .case-meta { gap: 1.5rem; }
+  .metrics   { grid-template-columns: 1fr 1fr; }
+}
