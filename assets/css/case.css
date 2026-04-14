@@ -297,6 +297,13 @@ main > .section:last-child { margin-bottom: 0; }
   justify-content: center;
 }
 
+.case-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 72px clamp(1.5rem, 5vw, 4rem);
+}
+
 /* ─── 13. IMAGEM DE CASE ─────────────────────────────────────
    Contêiner para screenshots reais nos case studies.
    Imagens responsivas, com borda e cursor de ponteiro para
