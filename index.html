@@ -199,12 +199,16 @@
        FOOTER — copyright e localização
        ═══════════════════════════════════════════ -->
   <footer>
-    <p>&copy; 2026 Demello Design Co.</p>
+    <p>&copy; <span id="footer-year"></span> Demello Design Co.</p>
     <p>São Paulo, BR</p>
   </footer>
 
   <!-- ─── Scripts ─────────────────────────────────────────── -->
   <script src="assets/js/ui.js"></script>
+  <script>
+    var fy = document.getElementById('footer-year');
+    if (fy) fy.textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
