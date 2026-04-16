@@ -125,11 +125,10 @@
           </span>
         </div>
         <div class="project-info">
-          <p class="project-name">
-            <span class="lang-pt">Provu: Comprovação de Renda automatizada</span>
-            <span class="lang-en">Provu — Automated Income Verification</span>
-          </p>
-          <p class="project-company">Provu</p>
+          <div class="project-info-left">
+            <p class="project-name"><span class="lang-pt">Provu: Comprovação de Renda automatizada</span><span class="lang-en">Provu — Automated Income Verification</span></p>
+            <p class="project-company">Provu</p>
+          </div>
         </div>
       </a>
       <a class="project-card project-card--wip" href="#">
@@ -140,8 +139,11 @@
           </span>
         </div>
         <div class="project-info">
-          <p class="project-name">Jackpot</p>
-          <p class="project-company">EstrelaBet</p>
+          <div class="project-info-left">
+            <p class="project-name">Jackpot</p>
+            <p class="project-company">EstrelaBet</p>
+          </div>
+          <span class="project-restricted-btn">Entre em contato para visualizar →</span>
         </div>
       </a>
       <a class="project-card project-card--wip" href="#">
@@ -152,8 +154,11 @@
           </span>
         </div>
         <div class="project-info">
-          <p class="project-name">Nebulosa Design System</p>
-          <p class="project-company">Stellar Gaming</p>
+          <div class="project-info-left">
+            <p class="project-name">Nebulosa Design System</p>
+            <p class="project-company">Stellar Gaming</p>
+          </div>
+          <span class="project-restricted-btn">Entre em contato para visualizar →</span>
         </div>
       </a>
     </div>
@@ -208,6 +213,17 @@
   <script>
     var fy = document.getElementById('footer-year');
     if (fy) fy.textContent = new Date().getFullYear();
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.project-restricted-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var t = document.getElementById('contato');
+          if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 64, behavior: 'smooth' });
+        });
+      });
+    });
   </script>
 
 </body>
