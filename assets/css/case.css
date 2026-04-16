@@ -386,3 +386,43 @@ main > .section:last-child { margin-bottom: 0; }
   .case-meta { gap: 1.5rem; }
   .metrics   { grid-template-columns: 1fr 1fr; }
 }
+
+.case-img-grid {
+  display: grid;
+  gap: 12px;
+  margin: 2rem 0;
+}
+
+.case-img-grid.cols-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.case-img-grid.cols-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.case-img-grid .grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-img-grid .img-placeholder {
+  margin: 0;
+  aspect-ratio: 9/16;
+  flex: 1;
+}
+
+.case-img-grid .grid-label {
+  text-align: center;
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--text2);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .case-img-grid.cols-2,
+  .case-img-grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
