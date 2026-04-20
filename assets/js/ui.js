@@ -125,7 +125,7 @@
   var lightboxClose = document.getElementById('lightboxClose');
 
   if (lightbox && lightboxImg) {
-    document.querySelectorAll('.case-img img').forEach(function (img) {
+    document.querySelectorAll('.case-img img, .case-img-grid img').forEach(function (img) {
       img.addEventListener('click', function () {
         lightboxImg.src = this.src;
         lightboxImg.alt = this.alt;
