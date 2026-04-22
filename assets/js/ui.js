@@ -125,10 +125,21 @@
   var lightboxClose = document.getElementById('lightboxClose');
 
   if (lightbox && lightboxImg) {
-    document.querySelectorAll('.case-img img, .case-img-grid img').forEach(function (img) {
+    document.querySelectorAll('.case-img img').forEach(function (img) {
       img.addEventListener('click', function () {
         lightboxImg.src = this.src;
         lightboxImg.alt = this.alt;
+        lightbox.classList.remove('is-grid');
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    document.querySelectorAll('.case-img-grid img').forEach(function (img) {
+      img.addEventListener('click', function () {
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+        lightbox.classList.add('is-grid');
         lightbox.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
@@ -148,6 +159,7 @@
 
     function closeLightbox() {
       lightbox.classList.remove('open');
+      lightbox.classList.remove('is-grid');
       document.body.style.overflow = '';
       lightboxImg.src = '';
     }

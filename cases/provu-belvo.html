@@ -210,13 +210,13 @@
 
       <div class="case-img-grid cols-2">
         <div class="grid-col">
-          <div class="grid-item">
+          <div class="grid-img-wrap">
             <img src="../assets/img/antes-provu-belvo.png" alt="Antes">
           </div>
           <p class="grid-label">Antes</p>
         </div>
         <div class="grid-col">
-          <div class="grid-item">
+          <div class="grid-img-wrap">
             <img src="../assets/img/depois-provu-belvo.png" alt="Depois">
           </div>
           <p class="grid-label">Depois</p>
@@ -285,7 +285,7 @@
       <div class="section-label">Aprendizados</div>
       <h2 class="section-title">O que esse projeto me ensinou.</h2>
       <p class="section-text"><strong>Nem todo problema de conversão é de usabilidade.</strong> A tela original funcionava bem: o usuário entendia as opções e conseguia escolher. O problema estava no que ele sentia ao escolher. Desconfiança em algo que não conhecia.</p>
-      <p class="section-text">Pesquisar antes de redesenhar mudou o escopo do problema. Sem os dados do Hotjar, a hipótese de trabalho seria usabilidade — e eu teria reescrito o fluxo inteiro para resolver algo que não era o problema real.</p>
+      <p class="section-text">Pesquisar antes de redesenhar mudou o escopo do problema. Sem os dados do Hotjar, a hipótese de trabalho seria usabilidade e eu teria reescrito o fluxo inteiro para resolver algo que não era o problema real.</p>
     </section>
 
   </main>
@@ -309,7 +309,9 @@
   <!-- ─── Lightbox ────────────────────────────────────────── -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Preview de imagem">
     <button class="lightbox-close" id="lightboxClose" aria-label="Fechar preview">&#x2715;</button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
   </div>
 
   <!-- ─── Scripts ─────────────────────────────────────────── -->
