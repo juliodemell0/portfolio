@@ -49,4 +49,23 @@ O arquivo `404.html` redireciona automaticamente qualquer acesso à URL antiga `
 
 ---
 
+## Google Analytics
+
+Todo arquivo HTML novo deve incluir o snippet abaixo como **último item dentro de `<head>`**, imediatamente antes de `</head>`:
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8T7TXVVT8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J8T7TXVVT8');
+</script>
+```
+
+ID de medição: `G-J8T7TXVVT8`
+
+---
+
 _Demello Design Co. © 2026_
