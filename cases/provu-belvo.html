@@ -34,10 +34,19 @@
     }
     .case-img .img-placeholder { aspect-ratio: 16 / 9; }
 
-    /* Métricas — evita corte em valores longos como +24,5pp */
+    /* Métricas — evita corte em valores longos como +25,3pp */
     .metric-value {
       font-size: clamp(22px, 3vw, 34px);
       white-space: nowrap;
+    }
+
+    /* TL;DR — frase de papel em itálico discreto */
+    .tldr-role {
+      display: block;
+      margin-top: 1rem;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--muted);
     }
 
   </style>
@@ -89,7 +98,7 @@
       <span class="tag">UI/UX</span>
     </div>
     <h1 class="case-title">Provu: <span>Comprovação de Renda Automatizada</span></h1>
-    <p class="case-subtitle">Uma mudança em uma única tela levou a conexão bancária automática de 48,5% para 73%. Sem reescrever o fluxo, sem novas features. Só pesquisa e hierarquia visual.</p>
+    <p class="case-subtitle">Uma mudança em uma única tela levou a conexão bancária automática de 48,5% para 73,8%. Sem reescrever o fluxo, sem novas features. Só pesquisa e hierarquia visual.</p>
     <div class="case-meta">
       <div class="case-meta-item">
         <span class="case-meta-label">Empresa</span>
@@ -118,15 +127,24 @@
   <!-- BODY -->
   <main class="case-body">
 
+    <!-- TL;DR -->
+    <section class="section">
+      <p class="section-text">Na Provu, 51,5% dos usuários escolhiam o fluxo manual de comprovação de renda. Não confiavam na integração automática, e o time de crédito processava cada caso à mão. A meta do trimestre era subir as conexões automáticas em 10%. Pesquisei o motivo da recusa, refiz a hierarquia da tela e movi os sinais de segurança para perto da decisão. Em 4.601 usuários nos primeiros dias do rollout, a adesão ao automático saiu de 48,5% para 73,8% (+25,3pp). Superou a meta em 2,5×. No acompanhamento posterior, 35% dos que passaram pela tela concluíram o empréstimo via Belvo.</p>
+      <em class="tldr-role">Papel: liderei discovery, hipótese e UI; pesquisa em par com BI.</em>
+    </section>
+
+    <div class="divider"></div>
+
     <!-- CONTEXTO -->
     <section class="section">
       <div class="section-label">Contexto</div>
       <p class="section-text">Na Provu, a comprovação de renda era o ponto de maior fricção no funil de crédito. Havia dois caminhos disponíveis: a conexão automática via <strong>Belvo</strong>, parceiro que acessa o internet banking do usuário e envia apenas o extrato dos últimos 90 dias à mesa de crédito, ou o <strong>envio manual</strong> do extrato em PDF.</p>
       <p class="section-text">O problema era que a maioria escolhia o caminho errado, não por preferência real, mas por desconfiança. O custo era direto: mais revisão manual para a mesa de crédito, mais espera para quem pedia o empréstimo.</p>
+      <p class="section-text">A meta do trimestre era aumentar em <strong>10%</strong> a adesão ao fluxo automático. O time olhava o número, mas não tinha hipótese sobre o motivo da recusa.</p>
 
       <div class="highlight">
         <p>"56% dos usuários que escolhiam o envio manual disseram que o motivo era insegurança ao enviar dados bancários. 90,2% nunca tinham ouvido falar da Belvo."</p>
-        <cite>Pesquisa quantitativa via Hotjar — 100 respostas em 7 dias</cite>
+        <cite>Pesquisa quantitativa via Hotjar: 100 respostas em 7 dias</cite>
       </div>
     </section>
 
@@ -162,14 +180,14 @@
           <div class="process-number">01</div>
           <div class="process-content">
             <div class="process-step-title">Análise de dados com o time de BI</div>
-            <div class="process-step-text">Antes de qualquer hipótese, fui aos dados. O BI apontou que usuários que conectavam via Belvo concluíam o empréstimo em 23% dos casos, contra apenas 8% dos que enviavam o extrato manualmente. Além disso, 95% dos usuários tinham conta em bancos suportados pela Belvo. O potencial estava represado por algo que não era técnico.</div>
+            <div class="process-step-text">Antes de qualquer hipótese, fui aos dados. O BI apontou que usuários que conectavam via Belvo concluíam o empréstimo em 23% dos casos, contra apenas 8% dos que enviavam o extrato manualmente. Além disso, 95% dos depósitos dos clientes ocorriam em bancos suportados pela Belvo. O potencial estava represado por algo que não era técnico.</div>
           </div>
         </div>
         <div class="process-step">
           <div class="process-number">02</div>
           <div class="process-content">
             <div class="process-step-title">Pesquisa quantitativa via Hotjar</div>
-            <div class="process-step-text">Configurei um questionário diretamente na tela de comprovação de renda, no exato momento em que o usuário optava pelo envio manual. Em uma semana, 100 respostas: 56% apontaram insegurança como motivo principal, 90,2% não conheciam a Belvo e 71,8% tinham acesso ao internet banking. O obstáculo era percepção, não capacidade.</div>
+            <div class="process-step-text">Configurei um questionário diretamente na tela de comprovação de renda, no exato momento em que o usuário optava pelo envio manual. Em uma semana, 100 respostas: 56% apontaram insegurança como motivo principal, 90,2% não conheciam a Belvo e 82% tinham acesso ao internet banking. O obstáculo era percepção, não capacidade.</div>
           </div>
         </div>
         <div class="process-step">
@@ -190,7 +208,7 @@
           <div class="process-number">05</div>
           <div class="process-content">
             <div class="process-step-title">Monitoramento pós-lançamento</div>
-            <div class="process-step-text">Após o deploy, acompanhei os dados de conversão semanalmente via dashboard de BI, com foco na proporção entre conexões automáticas e envios manuais. A base de medição foram 4.601 usuários únicos que passaram pela tela no período pós-lançamento. A hipótese se confirmou na primeira semana.</div>
+            <div class="process-step-text">Após o deploy, acompanhei os dados de conversão semanalmente via dashboard de BI. A medição inicial cobriu 4.601 usuários únicos nos primeiros dias do rollout (20% do tráfego web por cerca de 15 dias, antes da liberação para a base inteira). A hipótese se confirmou logo na primeira semana, e o acompanhamento posterior mostrou impacto também na conversão de empréstimos.</div>
           </div>
         </div>
       </div>
@@ -213,7 +231,7 @@
     <!-- SOLUÇÃO -->
     <section class="section">
       <div class="section-label">Solução</div>
-      <p class="section-text">A nova tela tirou a paridade visual. Em vez de apresentar Belvo e envio manual como escolhas equivalentes, a interface passou a ter hierarquia: Belvo na frente, com linguagem direta sobre segurança e privacidade. O envio manual continuou disponível, mas saiu do caminho principal.</p>
+      <p class="section-text">A nova tela tirou a paridade visual. Em vez de apresentar Belvo e envio manual como escolhas equivalentes, a interface passou a ter hierarquia: Belvo na frente, com linguagem direta sobre segurança e privacidade. O envio manual continuou disponível, mas saiu do caminho principal. <strong>Uma única tela alterada. Sem nova feature, sem reescrever fluxo.</strong></p>
       <p class="section-text">Não desenvolvi nenhuma nova funcionalidade. O que mudou foi a mensagem: de "escolha como prefere" para "aqui está o caminho seguro, rápido e automático". A opção manual continuou disponível para quem precisasse. Mas deixou de competir em pé de igualdade com a melhor escolha.</p>
 
       <div class="case-img-grid cols-2">
@@ -249,20 +267,20 @@
 
       <div class="metrics">
         <div class="metric">
-          <div class="metric-value">73%</div>
+          <div class="metric-value">73,8%</div>
           <div class="metric-label">De conexão bancária automática após o redesign</div>
         </div>
         <div class="metric">
-          <div class="metric-value">+24,5pp</div>
+          <div class="metric-value">+25,3pp</div>
           <div class="metric-label">De aumento na adesão ao fluxo via Belvo</div>
         </div>
         <div class="metric">
-          <div class="metric-value">4.601</div>
-          <div class="metric-label">Usuários únicos medidos no período pós-lançamento</div>
+          <div class="metric-value">35%</div>
+          <div class="metric-label">De conclusão de empréstimo via Belvo no acompanhamento posterior</div>
         </div>
         <div class="metric">
-          <div class="metric-value">1 tela</div>
-          <div class="metric-label">Alterada para gerar o resultado</div>
+          <div class="metric-value">4.601</div>
+          <div class="metric-label">Usuários únicos medidos nos primeiros dias do rollout</div>
         </div>
       </div>
 
@@ -281,7 +299,7 @@
         </div>
         <div class="outcome">
           <div class="outcome-title">Hipótese validada</div>
-          <div class="outcome-text">A pesquisa do Hotjar provou que o obstáculo era percepção, não capacidade técnica. O resultado nos 4.601 usuários confirmou.</div>
+          <div class="outcome-text">A pesquisa do Hotjar provou que o obstáculo era de percepção. Os números dos primeiros dias do rollout confirmaram.</div>
         </div>
       </div>
     </section>
