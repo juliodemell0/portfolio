@@ -135,6 +135,10 @@ nav {
   letter-spacing: 0.04em;
   gap: 6px;
 }
+.lang-toggle svg:last-child {
+  margin-left: 2px;
+  opacity: 0.5;
+}
 
 /* Dropdown de idioma — aparece abaixo do botão .lang-toggle */
 .lang-dropdown      { position: relative; }
@@ -183,7 +187,7 @@ nav {
   font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
   cursor: pointer;
 }
 

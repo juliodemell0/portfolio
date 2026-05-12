@@ -221,7 +221,7 @@ main > .section:last-child { margin-bottom: 0; }
 .challenge-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
 .challenge-text strong { color: var(--text); font-weight: 500; }
 
-/* ─── 9. RESULTADOS ──────────────────────────────────────────
+/* ─── 8. RESULTADOS ──────────────────────────────────────────
    Grid de 2 colunas com cards de resultado qualitativo.
 ─────────────────────────────────────────────────────────── */
 .outcomes {
@@ -240,7 +240,7 @@ main > .section:last-child { margin-bottom: 0; }
 .outcome-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 0.4rem; }
 .outcome-text  { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-/* ─── 10. DIVISOR ────────────────────────────────────────────
+/* ─── 9. DIVISOR ─────────────────────────────────────────────
    Linha decorativa curta na cor de acento, usada para separar
    visualmente as seções dentro do corpo do case study.
 ─────────────────────────────────────────────────────────── */
@@ -252,7 +252,7 @@ main > .section:last-child { margin-bottom: 0; }
   border-radius: 2px;
 }
 
-/* ─── 11. BOTÃO VOLTAR ───────────────────────────────────────
+/* ─── 10. BOTÃO VOLTAR ──────────────────────────────────────
    Área centralizada com botão ghost para retornar à homepage.
    O ícone SVG de seta usa stroke em vez de fill para aparência
    mais leve e consistente com o estilo de linha do design.
@@ -267,7 +267,7 @@ main > .section:last-child { margin-bottom: 0; }
   stroke-linejoin: round;
 }
 
-/* ─── 12. BOTÃO CTA AMARELO ─────────────────────────────────
+/* ─── 11. BOTÃO CTA AMARELO ─────────────────────────────────
    Variante de destaque para CTAs primários nos cases.
    Fundo #C8B700, texto e ícone em #000000.
 ─────────────────────────────────────────────────────────── */
@@ -291,12 +291,6 @@ main > .section:last-child { margin-bottom: 0; }
   margin: 32px 0;
 }
 
-.back-home {
-  padding: 72px clamp(1.5rem, 5vw, 4rem);
-  display: flex;
-  justify-content: center;
-}
-
 .case-nav {
   display: flex;
   justify-content: space-between;
@@ -304,7 +298,7 @@ main > .section:last-child { margin-bottom: 0; }
   padding: 72px clamp(1.5rem, 5vw, 4rem);
 }
 
-/* ─── 13. IMAGEM DE CASE ─────────────────────────────────────
+/* ─── 12. IMAGEM DE CASE ────────────────────────────────────
    Contêiner para screenshots reais nos case studies.
    Imagens responsivas, com borda e cursor de ponteiro para
    indicar que são clicáveis (abre o lightbox).
@@ -324,7 +318,7 @@ main > .section:last-child { margin-bottom: 0; }
 }
 .case-img + .case-img { margin-top: 32px; }
 
-/* ─── 14. LIGHTBOX ───────────────────────────────────────────
+/* ─── 13. LIGHTBOX ──────────────────────────────────────────
    Overlay de preview de imagem em tela cheia.
    Ativado via classe .open. Fundo desfocado com 80% de opacidade.
    Botão X fixo no canto superior direito para fechar.
@@ -407,7 +401,7 @@ main > .section:last-child { margin-bottom: 0; }
   border-color: var(--border2);
 }
 
-/* ─── 13. RESPONSIVO ─────────────────────────────────────────
+/* ─── 14. RESPONSIVO ─────────────────────────────────────────
    Em telas menores que 768px:
    - Resultados viram coluna única
    - Metadados do hero ficam com gap menor
@@ -417,6 +411,10 @@ main > .section:last-child { margin-bottom: 0; }
   .outcomes  { grid-template-columns: 1fr; }
   .case-meta { gap: 1.5rem; }
   .metrics   { grid-template-columns: 1fr 1fr; }
+  .case-img-grid.cols-2,
+  .case-img-grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .case-img-grid {
@@ -468,13 +466,6 @@ main > .section:last-child { margin-bottom: 0; }
   text-align: center;
   margin: 8px 0 0;
   font-size: 0.8rem;
-  color: var(--text2);
+  color: var(--muted);
   letter-spacing: 0.05em;
-}
-
-@media (max-width: 768px) {
-  .case-img-grid.cols-2,
-  .case-img-grid.cols-3 {
-    grid-template-columns: 1fr;
-  }
 }

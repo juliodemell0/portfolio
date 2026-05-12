@@ -131,7 +131,7 @@
 }
 
 /* Título de seção — uppercase pequeno na cor de acento */
-.section-title {
+.index-section-label {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -247,7 +247,7 @@
   color: var(--text);
   font-size: 14px;
   font-weight: 400;
-  transition: all 0.2s;
+  transition: background 0.2s, border-color 0.2s;
   background: transparent;
 }
 .contact-btn:hover {
@@ -326,3 +326,13 @@
   pointer-events: auto;
 }
 .project-restricted-btn:hover { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-tag,
+  .hero-title,
+  .hero-sub,
+  .hero-actions {
+    animation: none;
+    opacity: 1;
+  }
+}
