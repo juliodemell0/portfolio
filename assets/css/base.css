@@ -50,6 +50,10 @@
   --about-body-color: #555550;
 }
 
+[data-theme="light"] .project-restricted-btn {
+  color: var(--text);
+}
+
 /* ─── 3. TIPOGRAFIA & BODY ───────────────────────────────────
    Fonte principal: Inter (carregada via Google Fonts).
    Scroll suave com offset para compensar a nav fixa (64px).
