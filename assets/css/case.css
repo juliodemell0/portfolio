@@ -171,8 +171,8 @@ main > .section:last-child { margin-bottom: 0; }
 }
 .metric-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
 
-.metrics.metrics--stacked {
-  grid-template-columns: 1fr;
+.metrics.metrics--2col {
+  grid-template-columns: 1fr 1fr;
 }
 
 /* ─── 6. ETAPAS DE PROCESSO ──────────────────────────────────
