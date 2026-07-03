@@ -39,7 +39,7 @@ A preferência fica salva no navegador do visitante via `localStorage`.
 | PT (padrão) | Português |
 | EN | English |
 
-A preferência fica salva no navegador do visitante via `localStorage`.
+A preferência fica salva no navegador do visitante via `localStorage`. O `alt` de imagens descritivas também muda com o idioma, via `data-alt-pt`/`data-alt-en` (ver `CLAUDE.md`).
 
 ---
 

@@ -39,6 +39,7 @@
   ──────────────────────────────────────────────────────── */
   var savedLang = localStorage.getItem('lang') || 'pt';
   html.setAttribute('data-lang', savedLang);
+  updateAltText(savedLang);
 
   /* ─── Botão de tema escuro/claro ─────────────────────────
      A cada clique, alterna entre 'dark' e 'light', persiste
@@ -74,6 +75,7 @@
       var next = opt.getAttribute('data-lang');
       html.setAttribute('data-lang', next);
       localStorage.setItem('lang', next);
+      updateAltText(next);
       langMenu.classList.remove('open');
     });
   }
@@ -112,6 +114,18 @@
       ? logo.getAttribute('data-logo-light')
       : logo.getAttribute('data-logo-dark');
     if (src) logo.src = src;
+  }
+
+  /* ─── Função auxiliar: atualiza alt de imagens por idioma ─
+     Lê data-alt-pt e data-alt-en de cada <img> e aplica a
+     versão correta no atributo alt conforme o idioma ativo.
+     Imagens sem esses atributos não são afetadas.
+  ──────────────────────────────────────────────────────── */
+  function updateAltText(lang) {
+    document.querySelectorAll('img[data-alt-pt]').forEach(function (img) {
+      var text = lang === 'en' ? img.getAttribute('data-alt-en') : img.getAttribute('data-alt-pt');
+      if (text) img.alt = text;
+    });
   }
 
 

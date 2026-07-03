@@ -116,6 +116,16 @@ Controlado via `data-lang` no `<html>`. Padrão: `pt`.
 
 ---
 
+## Alt text bilíngue em imagens
+
+Toda imagem com `alt` descritivo (não decorativa) deve ter os atributos `data-alt-pt` e `data-alt-en`, além do `alt` normal (que serve como valor inicial em PT):
+```html
+<img src="..." alt="Texto em PT" data-alt-pt="Texto em PT" data-alt-en="Text in EN">
+```
+O `ui.js` troca o `alt` automaticamente ao alternar idioma, lendo esses dois atributos. Imagens de logo, avatar ou puramente decorativas (`alt=""`) não precisam desse tratamento.
+
+---
+
 ## Tipografia
 
 - **Cal Sans** — títulos e números de destaque (`.case-title`, `.section-title`, `.metric-value`, `.process-number`)
@@ -136,6 +146,7 @@ Responsável por:
 - Atualização da logo da nav
 - Proteção anti-spam do e-mail (apenas no `index.html`, via `#email-contact` e `#email-text`)
 - Lightbox de imagens (ativado ao clicar em `.case-img img` ou `.case-img-grid img`)
+- Troca de `alt` de imagens por idioma (via `data-alt-pt`/`data-alt-en`)
 
 ---
 
