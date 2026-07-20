@@ -188,6 +188,12 @@ Presente nas páginas de case study. Requer no HTML:
 
 ---
 
+## Regra de conteúdo: não citar "NDA"
+
+Projetos sem case público (ex: seção "Outros projetos") não devem mencionar a palavra "NDA" ou termos equivalentes ("acordo de confidencialidade", "sob confidencialidade") em nenhum texto visível do site — nem em títulos, subtítulos, CTAs ou comentários de UI. Motivo: expor esse termo publicamente é desnecessário e pode ser prejudicial para o autor, que ainda trabalha na empresa dona desses projetos. Se for preciso justificar a ausência de um case completo, usar linguagem neutra sobre o projeto em si (ex: métrica de resultado, descrição do escopo), sem citar a razão da confidencialidade.
+
+---
+
 ## Proteção do e-mail (index.html)
 
 O endereço de e-mail é montado por JavaScript para dificultar spam. Não escrever o endereço em texto plano no HTML. O `ui.js` injeta o valor em `#email-text` e o `href` em `#email-contact`.
