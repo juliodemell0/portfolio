@@ -115,6 +115,15 @@ main > .section:last-child { margin-bottom: 0; }
 .section-text + .section-text { margin-top: 1rem; }
 .section-text strong { color: var(--text); font-weight: 500; }
 
+/* Frase de declaração de papel no TL;DR, em itálico discreto */
+.tldr-role {
+  display: block;
+  margin-top: 1rem;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+}
+
 /* ─── 4. CAIXA DE DESTAQUE ───────────────────────────────────
    Bloco com borda esquerda colorida para citações ou insights
    importantes do case study.
@@ -162,12 +171,14 @@ main > .section:last-child { margin-bottom: 0; }
 
 .metric { background: var(--bg2); padding: 1.5rem; }
 
+/* O nowrap evita corte de valores longos como "+25,3pp" ou "12 → 5 dias" */
 .metric-value {
   font-family: 'Cal Sans', sans-serif;
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(22px, 3vw, 34px);
   color: var(--accent);
   line-height: 1;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 .metric-label { font-size: 12px; color: var(--muted); line-height: 1.4; }
 
