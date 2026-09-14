@@ -294,62 +294,6 @@
   .hero-actions  { justify-content: center; }
 }
 
-/* ─── 4b. OUTROS PROJETOS ────────────────────────────────────
-   Cards horizontais compactos para projetos sem case escrito.
-   Thumb pequena à esquerda, texto à direita, CTA para contato.
-─────────────────────────────────────────────────────────── */
-.other-projects {
-  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
-  border-top: 1px solid var(--border);
-}
-
-.other-projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.other-project-card {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 0.75rem;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--bg2);
-  text-decoration: none;
-  transition: border-color 0.2s, background 0.2s;
-}
-.other-project-card:hover { border-color: var(--border2); background: var(--bg3); }
-
-.other-project-thumb {
-  width: 88px;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-.other-project-thumb--a { background: linear-gradient(135deg, var(--bg3), rgba(180, 100, 255, 0.10)); }
-.other-project-thumb--b { background: linear-gradient(135deg, var(--bg3), rgba(100, 210, 160, 0.10)); }
-
-.other-project-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
-.other-project-name { font-size: 14px; font-weight: 500; color: var(--text); }
-.other-project-company { color: var(--muted); font-weight: 400; }
-.other-project-subtitle { font-size: 13px; color: var(--muted); line-height: 1.4; }
-
-.other-project-cta {
-  flex-shrink: 0;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent);
-  white-space: nowrap;
-}
-
-@media (max-width: 480px) {
-  .other-project-card { flex-wrap: wrap; }
-  .other-project-cta { width: 100%; text-align: right; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-tag,
   .hero-title,
